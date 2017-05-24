@@ -33,10 +33,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            
-        })
-        
-      }
+            self.tableView.reloadData()
+          })
+        }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -47,12 +46,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let post = posts[indexPath.row]
         print("Fain: \(post.caption)")
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
-    
     
     @IBAction func signOutTapped(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
