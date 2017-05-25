@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -184,13 +184,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0PR-BE-HW2">
                                         <rect key="frame" x="8" y="8" width="366" height="59"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="QaK-Vf-kdF" customClass="CircleView" customModule="devslopes_social">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="QaK-Vf-kdF" customClass="CircleView" customModule="devslopes_social">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="59"/>
                                                 <color key="backgroundColor" red="0.014646316878497601" green="0.62351161241531372" blue="0.68741065263748169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="59" id="0jP-vO-8UZ"/>
                                                     <constraint firstAttribute="height" constant="59" id="BQA-kg-q6B"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Hlj-GU-1Vh" appends="YES" id="N4m-hw-8Hs"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-zO-yM9">
                                                 <rect key="frame" x="64" y="0.0" width="238" height="59"/>
@@ -345,6 +349,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="QaK-Vf-kdF" id="KvK-my-ofQ"/>
                         <outlet property="tableView" destination="wds-iX-Tui" id="4bx-Vn-PeP"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="fPo-7H-LO1"/>
                     </connections>
@@ -353,6 +358,11 @@
                 <tapGestureRecognizer id="61z-B0-hcC">
                     <connections>
                         <action selector="signOutTapped:" destination="hZO-CR-61V" id="YyG-wp-dTd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Hlj-GU-1Vh">
+                    <connections>
+                        <action selector="addImageTapped:" destination="hZO-CR-61V" id="AD6-ON-YzX"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
