@@ -15,7 +15,7 @@ class Post {
     private var _likes: Int!
     private var _postKey: String!
     
-    var imageURL: String {
+    var imageUrl: String {
         return _imageURL
     }
     var caption: String {
@@ -28,9 +28,9 @@ class Post {
         return _postKey
     }
   
-    init (caption: String, imageURL: String, likes: Int) {
+    init (caption: String, imageUrl: String, likes: Int) {
         self._caption = caption
-        self._imageURL = imageURL
+        self._imageURL = imageUrl
         self._likes = likes
     }
     
@@ -40,8 +40,8 @@ class Post {
         if let caption = postData["caption"] as? String {
             self._caption = caption
         }
-        if let imageURL = postData["imageURL"] as? String {
-            self._imageURL = imageURL
+        if let imageUrl = postData["imageURL"] as? String {
+            self._imageURL = imageUrl
         }
         if let likes = postData["likes"] as? Int {
             self._likes = likes
