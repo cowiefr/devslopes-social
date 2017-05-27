@@ -23,7 +23,7 @@ class PostCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configureCell(post: Post, img: UIImage?) {
+    func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
